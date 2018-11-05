@@ -2,9 +2,9 @@ package aplicacao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 import entities.Produto;
-import util.ProdutoPredicate;
 
 /*
  * Fazer um programa que, a partir de uma lista de produtos, 
@@ -29,7 +29,12 @@ public class Programa {
 		//list.removeIf(Produto::staticProdutoPredicate);
 				
 		//predicate com referência para Método não estático (Nome da Classe::nomeDoMetodo)
-		list.removeIf(Produto::naoStaticProdutoPredicate);
+		//list.removeIf(Produto::naoStaticProdutoPredicate);
+		
+		//expressao lambda declarada é legal, pois podemos pegar valores de variáveis
+		double minimo = 100;
+		Predicate<Produto> pred = p -> p.getValor() >= minimo;
+		list.removeIf(pred);
 		
 		for(Produto p : list) {
 			System.out.println(p);
