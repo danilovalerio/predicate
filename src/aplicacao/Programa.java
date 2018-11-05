@@ -22,19 +22,9 @@ public class Programa {
 		list.add(new Produto("Tablet", 350.50));
 		list.add(new Produto("HD Case", 80.90));
 		
-		//Predicate com objeto
-		//list.removeIf(new ProdutoPredicate());
-		
-		//predicate com referência para Método estático (Nome da Classe::nomeDoMetodo)
-		//list.removeIf(Produto::staticProdutoPredicate);
-				
-		//predicate com referência para Método não estático (Nome da Classe::nomeDoMetodo)
-		//list.removeIf(Produto::naoStaticProdutoPredicate);
-		
-		//expressao lambda declarada é legal, pois podemos pegar valores de variáveis
+		//expressao lambda inline
 		double minimo = 100;
-		Predicate<Produto> pred = p -> p.getValor() >= minimo;
-		list.removeIf(pred);
+		list.removeIf(p -> p.getValor() >= minimo);
 		
 		for(Produto p : list) {
 			System.out.println(p);
