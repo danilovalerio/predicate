@@ -25,8 +25,11 @@ public class Programa {
 		//Predicate com objeto
 		//list.removeIf(new ProdutoPredicate());
 		
-		//predicate com referência para Método (Nome da Classe::nomeDoMetodo)
-		list.removeIf(Produto::staticProdutoPredicate);
+		//predicate com referência para Método estático (Nome da Classe::nomeDoMetodo)
+		//list.removeIf(Produto::staticProdutoPredicate);
+				
+		//predicate com referência para Método não estático (Nome da Classe::nomeDoMetodo)
+		list.removeIf(Produto::naoStaticProdutoPredicate);
 		
 		for(Produto p : list) {
 			System.out.println(p);

@@ -26,10 +26,16 @@ public class Produto {
 		this.valor = valor;
 	}
 	
-	//referencial com método estático
+	//referencia com método estático (trabalha com o argumento que você passar para ele)
 	public static boolean staticProdutoPredicate(Produto p) {
 		return p.getValor() >= 100;
 	}
+	
+	//referencia com método não estático (trabalha com o próprio objeto em que estou)
+	public boolean naoStaticProdutoPredicate() {
+		return valor >= 100;
+	}
+	
 
 	@Override
 	public String toString() {
