@@ -21,6 +21,11 @@ public class Programa {
 		list.add(new Produto("Tablet", 350.50));
 		list.add(new Produto("HD Case", 80.90));
 		
+		list.removeIf(p -> p.getValor() >= 100);
+		
+		for(Produto p : list) {
+			System.out.println(p);
+		}
 
 	}
 
