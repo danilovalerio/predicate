@@ -22,7 +22,11 @@ public class Programa {
 		list.add(new Produto("Tablet", 350.50));
 		list.add(new Produto("HD Case", 80.90));
 		
-		list.removeIf(new ProdutoPredicate());
+		//Predicate com objeto
+		//list.removeIf(new ProdutoPredicate());
+		
+		//predicate com referência para Método (Nome da Classe::nomeDoMetodo)
+		list.removeIf(Produto::staticProdutoPredicate);
 		
 		for(Produto p : list) {
 			System.out.println(p);

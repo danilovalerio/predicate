@@ -25,6 +25,11 @@ public class Produto {
 	public void setValor(Double valor) {
 		this.valor = valor;
 	}
+	
+	//referencial com método estático
+	public static boolean staticProdutoPredicate(Produto p) {
+		return p.getValor() >= 100;
+	}
 
 	@Override
 	public String toString() {
