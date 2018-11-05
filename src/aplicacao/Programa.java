@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import entities.Produto;
+import util.ProdutoPredicate;
 
 /*
  * Fazer um programa que, a partir de uma lista de produtos, 
@@ -21,7 +22,7 @@ public class Programa {
 		list.add(new Produto("Tablet", 350.50));
 		list.add(new Produto("HD Case", 80.90));
 		
-		list.removeIf(p -> p.getValor() >= 100);
+		list.removeIf(new ProdutoPredicate());
 		
 		for(Produto p : list) {
 			System.out.println(p);
